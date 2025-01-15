@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'business_logic/css/styles.css' %}" rel="stylesheet" />
+    <title>Управление заказами</title>
+
+</head>
+<body>
+
+    <div class="orders-section">
+        <div id="order-items" class="container"></div>
+    </div>
+
+    <div class="form-section">
+        <h3>Создание нового заказа</h3>
+        <label for="table-number">Номер стола:</label>
+        <input type="number" id="table-number" placeholder="Введите номер стола" style="margin-bottom: 20px; width: 100%; padding: 8px;">
+        <div id="order-items-list"></div>
+        <button class="add-dish-btn" onclick="addDishField()">Добавить блюдо</button>
+        <button class="submit-btn" onclick="submitOrder()">Отправить заказ</button>
+    </div>
+
+
+<script src="{% static 'business_logic/js/extreme_js.js' %}"></script>
+</body>
+</html>

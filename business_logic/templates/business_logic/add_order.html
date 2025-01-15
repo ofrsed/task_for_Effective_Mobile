@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить заказ</title>
+</head>
+<body>
+    <h1>Добавить заказ</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Номер стола:</label>
+        <input type="number" name="table_number" required><br><br>
+
+        <h3>Выберите блюда:</h3>
+        {% for dish in dishes %}
+        <div>
+            <label>{{ dish.name }} ({{ dish.price }} руб.)</label>
+            <input type="number" name="dish_{{ dish.id }}" value="0" min="0">
+        </div>
+        {% endfor %}
+        <br>
+        <button type="submit">Добавить заказ</button>
+    </form>
+    <a href="{% url 'order_list' %}">Назад</a>
+</body>
+</html>
