@@ -14,4 +14,4 @@
 Если появится свободное время, возможно, вернусь к проекту и улучшу что-нибудь. Но на данный момент считаю, что основная функциональность уже полностью реализована
 
 
-![Alt Text]()
+![Alt Text](https://github.com/ofrsed/task_for_Effective_Mobile/blob/main/test_task_image.png)
