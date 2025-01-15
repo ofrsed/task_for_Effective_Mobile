@@ -2,9 +2,9 @@
 
 Инструкция по запуску
 
-1. `git clone git@github.com:ofrsed/task_for_Effective_Mobile.git`
-2. `cd .\task_for_Effective_Mobile`
-3. `docker-compose up`
+1. `git clone`
+2. `cd .\`
+3. `docker-compose up --build -d`
 
 
 В задании указан срок в 7 дней, и мне не совсем понятно, кто будет тратить целую неделю на тестовое, не имея предварительного общения с HR.
