@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: postgres
+    networks:
+      - app_network
+    tmpfs:
+      - /var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    container_name: django_app
+    ports:
+      - "8000:8000"
+    networks:
+      - app_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_NAME=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=12345
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+    volumes:
+      - /tmp/dbdata
+
+
+
+networks:
+  app_network:
+    driver: bridge
+
